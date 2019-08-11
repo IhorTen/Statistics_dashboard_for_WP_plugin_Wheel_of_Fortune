@@ -1,0 +1,274 @@
+.statistic_container {
+    display: grid;
+    grid-template-areas:
+            'title cal drop'
+            'visit unique whAp'
+            'stat stat st_bar';
+    grid-template-rows: 50px 100px 1fr;
+    grid-template-columns: 33% 34% 33%;
+    grid-gap: 10px;
+    height: 80vh;
+    margin: 0;
+    padding-right: 20px;
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+}
+
+.page_visitors,
+.unique_visitors,
+.whatsApp_clicked {
+    display: grid;
+    font-size: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.page_visitors,
+.unique_visitors,
+.whatsApp_clicked {
+    padding: 15px;
+}
+
+.page_visitors {
+    grid-area: visit;
+}
+.unique_visitors {
+    grid-area: unique;
+}
+.whatsApp_clicked {
+    grid-area: whAp;
+}
+.statistics {
+    grid-area: stat;
+}
+.calendar {
+    grid-area: cal;
+}
+.dropdown-select {
+    grid-area: drop;
+}
+.title {
+    grid-area: title;
+}
+.statistics_bar {
+    grid-area: st_bar;
+}
+
+.page_content,
+.unique_content,
+.wa_content {
+    align-self: center;
+}
+
+.page_content,
+.unique_content,
+.wa_content {
+    display: grid;
+    grid-template-areas:
+            'fa_icon val . '
+            'fa_icon title . ';
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 15% 50% 1fr;
+}
+
+@media (min-width: 1200px) and (max-width: 1400px){
+    .page_content,
+    .unique_content,
+    .wa_content {
+        grid-template-columns: 20% 50% 1fr;
+    }
+}
+@media (min-width: 550px) and (max-width: 1200px){
+    .page_content,
+    .unique_content,
+    .wa_content {
+        grid-template-columns: 1fr 50% 1fr;
+    }
+    .fa-chart-bar,
+    .fa-address-card,
+    .fa-whatsapp {
+        padding-right: 10px;
+    }
+}
+
+@media (max-height: 600px) and (orientation:landscape) {
+    .statistic_container {
+        height: 110vh;
+    }
+}
+
+@media (max-width: 550px){
+    .statistics_bar {
+        display: none;
+    }
+    .statistics {
+        min-width: 550px;
+        display: flex;
+    }
+    .page_title,
+    .unique_title,
+    .wa_title {
+        display: none;
+    }
+    .title {
+        display: none;
+    }
+    .statistic_container {
+        grid-template-areas:
+                'cal cal drop'
+                'visit unique whAp'
+                'stat stat stat';
+        grid-template-rows: 30px 60px 1fr;
+        grid-template-columns: 33% 34% 33%;
+    }
+    .page_content,
+    .unique_content,
+    .wa_content {
+        grid-template-areas:
+                'fa_icon val '
+                'fa_icon .';
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+    .page_val,
+    .unique_val,
+    .wa_val {
+        margin-top: 12px;
+        padding-left: 2px;
+    }
+    .page_visitors, .unique_visitors, .whatsApp_clicked {
+        padding: 10px;
+    }
+    .select-items div, .select-selected {
+        padding: 8px 10px!important;
+        font-size: 10px!important;
+    }
+    .select-selected:after {
+        right: 5px;
+    }
+}
+
+.fa-chart-bar,
+.fa-address-card,
+.fa-whatsapp {
+    grid-area: fa_icon;
+}
+
+.page_title,
+.unique_title,
+.wa_title {
+    grid-area: title;
+}
+
+.page_val,
+.unique_val,
+.wa_val {
+    grid-area: val;
+}
+
+.page_val,
+.unique_val,
+.wa_val {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.page_val {
+    color: #fa5a8b;
+}
+
+.unique_val {
+    color: #0a9bff;
+}
+
+.wa_val {
+    color: #53c678;
+}
+
+.page_title,
+.unique_title,
+.wa_title {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/*////////////DROPDOWN//////////*/
+
+.dropdown-select {
+    position: relative;
+    float: right;
+    /*padding: 5px 10px 5px 5px;*/
+}
+
+.dropdown-select select {
+    display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+    background-color: rgba(30, 144, 255, 0.78);
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 15px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 10px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+/*style items (options):*/
+.select-items {
+    position: absolute;
+    /*width: 100%;*/
+    background-color: rgba(30, 144, 255, 0.78);
+    top: 100%;
+    left: 0px;
+    right: 0;
+    z-index: 99;
+    border-radius: 5px;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/*///////////CALENDAR//////////*/
+#date_range {
+    border-radius: 5px;
+    height: 35px;
+    width: 200px;
+    font-size: 15px;
+}
+
+@media (max-width: 715px){
+    #date_range {
+        width: 85%;
+    }
+}

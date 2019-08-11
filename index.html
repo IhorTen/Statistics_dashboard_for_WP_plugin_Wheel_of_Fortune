@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistics</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script src="https://kit.fontawesome.com/d51ce5c01b.js"></script>
+</head>
+<body>
+
+    <div class="statistic_container">
+        <div class="title">  </div>
+        <div class="calendar">
+            <label for="date_range">
+                <i class="far fa-calendar-alt fa-2x" style="color: #1E90FF"></i>
+                <input type="text" name="daterange" id="date_range" />
+            </label>
+        </div>
+        <div class="dropdown-select">
+            <select>
+                <option value="0">Date selection</option>
+                <option value="today">Today</option>
+                <option value="yesterday">Yesterday</option>
+                <option value="last_week" selected>Last week</option>
+                <option value="this_month">This month</option>
+                <option value="last_month">Last month</option>
+                <option value="lifetime">Lifetime</option>
+            </select>
+        </div>
+        <div class="page_visitors">
+            <div class="page_content">
+                <i class="far fa-chart-bar fa-3x" style="color: #fa5a8b"></i>
+                <span class="page_title"> Test Spin </span>
+                <span class="page_val"></span>
+            </div>
+        </div>
+        <div class="unique_visitors">
+            <div class="unique_content">
+                <i class="fas fa-address-card fa-3x" style="color: #0a9bff"></i>
+                <span class="unique_title"> Real Spin </span>
+                <span class="unique_val"></span>
+            </div>
+        </div>
+        <div class="whatsApp_clicked">
+            <div class="wa_content">
+                <i class="fab fa-whatsapp fa-3x" style="color: #53c678"></i>
+                <span class="wa_title"> Whats App </span>
+                <span class="wa_val"></span>
+            </div>
+        </div>
+        <div class="statistics" id="chartContainer"></div>
+        <div class="statistics_bar" id="chartContainer_bar"></div>
+        <!--style="height: 370px; width: 80%;"-->
+    </div>
+
+
+    <script src="chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
