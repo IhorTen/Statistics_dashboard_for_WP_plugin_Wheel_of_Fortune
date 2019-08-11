@@ -45,7 +45,6 @@
             console.log('Test Click', sumTestClick);
             console.log('Real Click', sumRealClick);
             console.log('WatsApp Click', sumWatsAppClick);
-
         }
 
         //////////////// CALENDAR DATE ///////////////
@@ -120,8 +119,6 @@
 
         /////////////////////STATISTICS//////////////////
         function statistics(intervalType, interval,dateFormat, statPointsTest, statPointsReal, name) {
-            // window.onload = function () {
-            // };
             let chart = new CanvasJS.Chart("chartContainer", {
                 animationEnabled: true,
                 animationDuration: 2000,
@@ -139,9 +136,6 @@
                     intervalType: intervalType,
                     valueFormatString: dateFormat
                 },
-                // axisY:{
-                //     includeZero: false,
-                // },
                 data: [{
                     type: "spline",
                     name: "Test Spin",
@@ -205,7 +199,6 @@
             $('.page_val').html(testClick);
             $('.unique_val').html(realClick);
             $('.wa_val').html(watsAppClick);
-
         }
 
         /////////////////////DROPDOWN//////////////////
@@ -282,8 +275,6 @@
                     }
                 }
             }
-            /*if the user clicks anywhere outside the select box,
-            then close all select boxes:*/
             document.addEventListener("click", closeAllSelect);
         }
 
@@ -347,12 +338,8 @@
                         <option value="lifetime">Lifetime</option>
                     </select>
                 `);
-
                 dropdownMenu();
             });
         }
-
-
-
     })
 })( jQuery );
