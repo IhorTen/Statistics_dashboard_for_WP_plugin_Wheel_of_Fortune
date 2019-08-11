@@ -13,7 +13,7 @@
         dropdownMenu();
         getStatData('last_week');
 
-        ///////////////ADD STAT POINTS/////////////
+        ///////////////ADD STAT POINTS from Data/////////////
         function addStatPoints(data) {
             let point;
             statPointsTest = [];
@@ -31,7 +31,7 @@
             }
         }
 
-        /////////////SUM TEST REAL WATSAAP CLICK////////////
+        /////////////SUM TEST REAL WATSAPP CLICK////////////
         function sumClickButton(data) {
             sumTestClick = 0;
             sumRealClick = 0;
